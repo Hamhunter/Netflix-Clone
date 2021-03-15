@@ -1,3 +1,61 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container">
+    <div class="header">
+        <!-- banner area -->
+        <div class="header-banner">
+            <h2>title</h2>
+            <div class="header-button"
+                [ngStyle]="{'background-image':'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3))'}">
+                <button class="play-button">
+                    <mat-icon>arrow_right</mat-icon>
+                    <span>play</span>
+                </button>
+                <button class="more-button">
+                    <mat-icon>info</mat-icon>
+                    <span>more info</span>
+                </button>
+            </div>
+            <!-- banner ends here -->
+        </div>
+   
+    <!-- main area -->
+    <div class="header-main" id="stickyHeader" [class.sticky]="sticky" #stickheader>
+        <div class="header-left">
+            <a routerlink="/">
+                <img src="/assets/netflix2.svg" alt="logo">
+            </a>
+            <ul>
+                <li class="active"><a href="#">home</a></li>
+                <li><a href="#">TV shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </div>
+        <div class="header-right">
+            <ul>
+                <li><a href="#">
+                        <mat-icon>search</mat-icon>
+                    </a></li>
+                <li><a href="#"> Children </a></li>
+                <li><a href="#">
+                        <mat-icon>card_giftcard</mat-icon>
+                    </a></li>
+                <li><a href="#">
+                        <mat-icon>notifications</mat-icon>
+                    </a></li>
+                <li><img style="height: 50px;width: 50px;" src="/assets/avatar.png" alt="avatar"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- header main ends -->
 
-
-<router-outlet></router-outlet>
+<div class="body" style="margin-top:30rem;">
+<app-slider title="TRENDING" [movies]="trending" [sliderConfig]="slider_config"></app-slider>
+<app-slider title="TOP RATED" [movies]="top_rated" [sliderConfig]="slider_config"></app-slider>
+<app-slider title="ORIGINAL" [movies]="originals" [sliderConfig]="slider_config"></app-slider>
+<app-slider title="POPULAR" [movies]="popular" [sliderConfig]="slider_config"></app-slider>
+<app-slider title="LATEST" [movies]="latest" [sliderConfig]="slider_config"></app-slider>
+</div>
+</div>
