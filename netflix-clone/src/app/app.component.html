@@ -2,10 +2,9 @@
 <div class="container">
     <div class="header">
         <!-- banner area -->
-        <div class="header-banner">
-            <h2>title</h2>
-            <div class="header-button"
-                [ngStyle]="{'background-image':'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3))'}">
+        <div class="header-banner" [ngStyle]="{'background-image':'linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.3)),url('+headerBGurl+')'}">
+            <h2>{{trending?.results[0].title}}</h2>
+            <div class="header-button">
                 <button class="play-button">
                     <mat-icon>arrow_right</mat-icon>
                     <span>play</span>

@@ -17,6 +17,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
+    console.log(this.title);
 
   }
  getMovies(){

@@ -10,7 +10,7 @@ const enum endpoint {
   popular = '/movie/popular',
   top_rated = '/movie/top_rated',
   upcoming = '/movie/upcoming',
-  trending = '/trending/all/week/',
+  trending = '/trending/all/week',
   originals = '/discover/tv',
 
 }
@@ -33,7 +33,7 @@ export class MovieService {
   getOriginals():Observable<Movies> {
     return this.http.get<Movies>(this.URL + endpoint.originals,{params:{api_key:this.api_key}})
   }
-  getPopupalMovies():Observable<Movies> {
+  getPopularMovies():Observable<Movies> {
     return this.http.get<Movies>(this.URL + endpoint.popular,{params:{api_key:this.api_key}})
   }
   getToprated():Observable<Movies> {

@@ -3,8 +3,8 @@
     <div class="movie-images">
         <div class="thumbnails">
             <ngx-slick-carousal [config]="sliderConfig" class="carousal">
-                <div class="slick-item" *ngFor="let t of [].constructor(2)" >
-                    <h4>images {{t}}</h4>
+                <div class="slick-item" *ngFor="let movie of movies?.results" >
+                    <img src="https://image.tmdb.org/t/p/w200{{movie?.poster_path}}" alt="{{movie?.title}}">
                 </div>
             </ngx-slick-carousal>
         </div>
