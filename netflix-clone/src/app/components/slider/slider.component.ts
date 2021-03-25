@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Movies } from 'src/app/models/movies';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -8,7 +8,6 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
-
   constructor(private movieservice:MovieService) { }
   @Input() sliderConfig;
   @Input() movies:Movies;
@@ -16,13 +15,12 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getMovies();
-    console.log(this.title);
+    // this.getMovies();
 
   }
  getMovies(){
    this.movieservice.getlatestMovie().subscribe((success)=>{
-     console.log(success);
+     console.log(success,"movies");
    })
  }
 
